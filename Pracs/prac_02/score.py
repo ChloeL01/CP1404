@@ -5,6 +5,7 @@ import random
 
 
 def main():
+    """Get a score then print"""
     score = int(input("Enter score: "))
     print(return_score_result(score))
     score = random.randint(0, 100)
@@ -12,6 +13,7 @@ def main():
 
 
 def return_score_result(score):
+    """Return the score result"""
     if score < 0 or score > 100:
         return "Invalid score, try again!"
     elif score >= 90:
