@@ -11,14 +11,14 @@ def main():
 
 def print_password(password):
     """Print the number of *'s for the password length"""
-    for i in range(len(password)):
+    for i in range(len(password)):  # print *'s for the length of the password
         print("*", end="")
 
 
 def get_password():
     """Check for a valid password"""
     password = input("Password: ")
-    while len(password) < 8:
+    while len(password) < 8:    # password must be longer then 8 characters
         print("Invalid, must be at least 8 characters")
         password = input("Password: ")
     return password
