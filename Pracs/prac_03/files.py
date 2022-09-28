@@ -10,7 +10,8 @@ out_file.close()
 
 # 2
 in_file = open("name.txt", "r")
-print(f"Your name is {in_file.readline()}")
+print(f"Your name is {in_file.readline().strip()}")
+in_file.close()
 
 # 3
 numbers = [17, 42, 400]
