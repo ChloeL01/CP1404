@@ -2,15 +2,15 @@
 CP1404/CP5632 - Files
 """
 
-# # 1
-# name = input("Name: ")
-# out_file = open("name.txt", "w")
-# print(name, file=out_file)
-# out_file.close()
-#
-# # 2
-# in_file = open("name.txt", "r")
-# print(f"Your name is {in_file.readline()}")
+# 1
+name = input("Name: ")
+out_file = open("name.txt", "w")
+print(name, file=out_file)
+out_file.close()
+
+# 2
+in_file = open("name.txt", "r")
+print(f"Your name is {in_file.readline()}")
 
 # 3
 numbers = [17, 42, 400]
