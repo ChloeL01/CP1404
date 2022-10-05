@@ -15,3 +15,18 @@ Number: 5
    The average of the numbers is 6.2
 
 """
+
+NUMBER = 5
+
+numbers = []
+number = int(input("Number: "))
+numbers.append(number)
+for i in range(NUMBER - 1):
+    number = int(input("Number: "))
+    numbers.append(number)
+# print(numbers)
+print(f"The first number is {numbers[0]}")
+print(f"The last number is {numbers[-1]}")
+print(f"The smallest number is {min(numbers)}")
+print(f"The largest number is {max(numbers)}")
+print(f"The average of the numbers is {sum(numbers)/NUMBER}")
