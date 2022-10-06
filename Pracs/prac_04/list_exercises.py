@@ -16,6 +16,7 @@ Number: 5
 
 """
 
+# Basic list operators
 NUMBER = 5
 
 numbers = []
@@ -30,6 +31,7 @@ print(f"The last number is {numbers[-1]}")
 print(f"The smallest number is {min(numbers)}")
 print(f"The largest number is {max(numbers)}")
 print(f"The average of the numbers is {sum(numbers)/NUMBER}")
+
 
 # Woefully inadequate security checker
 usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn',
