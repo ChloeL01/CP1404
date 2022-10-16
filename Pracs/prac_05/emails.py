@@ -9,7 +9,7 @@ def main():
     email_to_name = {}
     email_address = input("Email: ")
 
-    while email_address != "":
+    while email_address != "":  # keeps going until a blank email is entered
         name = extract_name_from_email(email_address)
         answer = input(f"Is your name {name}? (Y/n) ").lower()
 
@@ -24,9 +24,9 @@ def main():
 
 def extract_name_from_email(email):
     """Extract the name from the email address."""
-    prefix = email.split('@')[0]
-    name = prefix.split('.')
-    full_name = " ".join(name).title()
+    prefix = email.split('@')[0]    # split at the '@' symbol to get the name part
+    name = prefix.split('.')        # separates the name if there's a '.' between first and last
+    full_name = " ".join(name).title()  # join the first and last name together
     return full_name
 
 

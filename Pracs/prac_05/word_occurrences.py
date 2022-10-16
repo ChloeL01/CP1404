@@ -9,9 +9,9 @@ text = input("Text: ")
 words = text.split(" ")
 words_to_count = {}
 for word in words:
-    words_to_count[word] = words_to_count.get(word, 0) + 1
+    words_to_count[word] = words_to_count.get(word, 0) + 1  # counts the number of words in the sentence
 
-max_length = max(len(name) for name in list(words_to_count.keys()))
+max_length = max(len(name) for name in list(words_to_count.keys()))     # find the longest word for formatting
 
 for name in sorted(words_to_count.keys()):
     print(f"{name:{max_length}} : {words_to_count[name]}")
