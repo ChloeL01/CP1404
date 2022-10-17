@@ -3,9 +3,9 @@ CP1404/CP5632 Hex coloring
 
 """
 
-NAME_TO_CODE = {"Absolute Zero": "#0048ba", "Alizarin crimson": "#e32636", "Amber": "#ffbf00",
+NAME_TO_CODE = {"Absolute Zero": "#0048ba", "Alizarin Crimson": "#e32636", "Amber": "#ffbf00",
                 "Banana Mania": "#fae7b5", "Bright Green": "#66ff00", "Bulgarian Rose": "#480607",
-                "Chocolate": "#d2691e", "Coffee": "#6f4e37", "DarkOrchid": "#9932cc", "DarkViolet": "#9400d3"}
+                "Chocolate": "#d2691e", "Coffee": "#6f4e37", "Dark Orchid": "#9932cc", "Dark Violet": "#9400d3"}
 
 print("The color's that are available are:")
 for name in NAME_TO_CODE.keys():
