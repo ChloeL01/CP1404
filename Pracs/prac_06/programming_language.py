@@ -5,9 +5,9 @@ CP1404/CP5632 programming languages class
 
 
 class ProgrammingLanguage:
-    """ Programming Language class"""
+    """Represent a programming language object"""
 
-    def __init__(self, name="", typing=False, reflection=False, year=0):
+    def __init__(self, name, typing, reflection, year):
         """Initialise a language instance"""
         self.name = name
         self.typing = typing
