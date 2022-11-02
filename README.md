@@ -15,10 +15,10 @@ Three main lessons that I have learned about "clean code" from this subject woul
 
 
 
-# Useful links
+## Useful links
 
-## Programming patterns
-https://github.com/CP1404/Starter/wiki/Programming-Patterns
+Programming patterns for this subject can be found [_here_](https://github.com/CP1404/Starter/wiki/Programming-Patterns)
 
-## Practicals instructions
-https://github.com/CP1404/Practicals
+
+Practicals instructions can be found [_here_](https://github.com/CP1404/Practicals)
+
