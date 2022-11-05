@@ -22,3 +22,6 @@ class Project:
     def is_complete(self):
         """Return True if percentage is less than 100% done."""
         return self.completion_percentage < COMPLETION_PERCENTAGE
+
+    def __getitem__(self, item):
+        return item
