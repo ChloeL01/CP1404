@@ -21,13 +21,17 @@ PERCENTAGE_INDEX = 4
 def main():
     """Project manager."""
     projects = get_data(FILENAME)
+    file = FILENAME
     print(MENU)
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "L":
-            print("L")
+            file = input("Load file from: ")
+            projects = get_data(file)
         elif choice == "S":
-            print("S")
+            new_file = input("Enter filename to save to projects to: ")
+            save_data(new_file, projects)
+            print(f"Projects have been saved to {new_file}")
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
@@ -40,6 +44,7 @@ def main():
             print("Invalid input")
         print(MENU)
         choice = input(">>> ").upper()
+    save_data(file, projects)
     print("Thank you for using custom-built project management software.")
 
 
@@ -54,6 +59,14 @@ def get_data(filename):
                               float(parts[COST_INDEX]), int(parts[PERCENTAGE_INDEX]))
             projects.append(project)
     return projects
+
+
+def save_data(filename, projects):
+    """Save the data to the file."""
+    with open(filename, "w") as out_file:
+        print("Name	Start Date	Priority	Cost Estimate	Completion Percentage", file=out_file)
+        for project in projects:
+            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion_percentage}", end="\n", file=out_file)
 
 
 def display_projects(projects):
