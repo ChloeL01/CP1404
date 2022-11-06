@@ -35,7 +35,7 @@ def main():
         elif choice == "D":
             display_projects(projects)
         elif choice == "F":
-            print("F")
+            filter_projects(projects)
         elif choice == "A":
             add_project(projects)
         elif choice == "U":
@@ -55,7 +55,8 @@ def get_data(filename):
         in_file.readline()
         for line in in_file:
             parts = line.strip().split("\t")
-            project = Project(parts[NAME_INDEX], parts[START_DATE_INDEX], int(parts[PRIORITY_INDEX]),
+            date = datetime.datetime.strptime(parts[START_DATE_INDEX], "%d/%m/%Y").date()
+            project = Project(parts[NAME_INDEX], date, int(parts[PRIORITY_INDEX]),
                               float(parts[COST_INDEX]), int(parts[PERCENTAGE_INDEX]))
             projects.append(project)
     return projects
@@ -66,17 +67,19 @@ def save_data(filename, projects):
     with open(filename, "w") as out_file:
         print("Name	Start Date	Priority	Cost Estimate	Completion Percentage", file=out_file)
         for project in projects:
-            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion_percentage}", end="\n", file=out_file)
+            print(f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}"
+                  f"\t{project.completion_percentage}", end="\n", file=out_file)
 
 
 def display_projects(projects):
-    """Display projects from the projects list"""
+    """Display projects from the projects list by priority order"""
+    sorted_projects = sorted(projects)
     print("Incomplete projects:")
-    for project in projects:
+    for project in sorted_projects:
         if project.is_complete():
             print(f"  {project}")
     print("Complete projects:")
-    for project in projects:
+    for project in sorted_projects:
         if not project.is_complete():
             print(f"  {project}")
 
@@ -98,13 +101,21 @@ def add_project(projects):
     """Add a new project to the projects list."""
     print("Let's add a new project")
     name = input("Name: ")
-    start_date = input("Start date (dd/mm/yy): ")
+    start_date_string = input("Start date (dd/mm/yy): ")
+    date = datetime.datetime.strptime(start_date_string, "%d/%m/%Y").date()
+
     priority = int(input("Priority: "))
     cost = float(input("Cost estimate: "))
     percentage = int(input("Percentage complete: "))
-    new_project = Project(name, start_date, priority, cost, percentage)
+
+    new_project = Project(name, date, priority, cost, percentage)
     projects.append(new_project)
     return projects
+
+
+def filter_projects(projects):
+    """Filter projects by user input."""
+    pass
 
 
 if __name__ == '__main__':
