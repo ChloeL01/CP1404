@@ -8,7 +8,7 @@ class Project:
     """Represent a project object."""
 
     def __init__(self, name, start_date, priority, cost, completion_percentage):
-        """Initialise."""
+        """Initialise a Project."""
         self.name = name
         self.start_date = start_date
         self.priority = priority
@@ -17,7 +17,7 @@ class Project:
 
     def __str__(self):
         """Return a string representation."""
-        return f"{self.name}, start: {self.start_date}, priority {self.priority}, " \
+        return f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, priority {self.priority}, " \
                f"estimate: ${self.cost:,.2f}, completion: {self.completion_percentage}%"
 
     def is_complete(self):
@@ -31,11 +31,3 @@ class Project:
     def __lt__(self, other):
         """Sort Projects by priority."""
         return self.priority < other.priority
-
-    def sort_by_date(self):
-        """Sort by start date."""
-        return self.start_date
-
-    def compare_datetime(self, other_date):
-        """Return True or False if date is equal to or larger than other date."""
-        return self.start_date >= other_date
