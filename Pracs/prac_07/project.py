@@ -1,5 +1,6 @@
 """CP1404/CP5632 Project class"""
 import datetime
+
 COMPLETION_PERCENTAGE = 100
 
 
@@ -16,7 +17,7 @@ class Project:
 
     def __str__(self):
         """Return a string representation."""
-        return f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, priority {self.priority}, " \
+        return f"{self.name}, start: {self.start_date}, priority {self.priority}, " \
                f"estimate: ${self.cost:,.2f}, completion: {self.completion_percentage}%"
 
     def is_complete(self):
@@ -30,3 +31,11 @@ class Project:
     def __lt__(self, other):
         """Sort Projects by priority."""
         return self.priority < other.priority
+
+    def sort_by_date(self):
+        """Sort by start date."""
+        return self.start_date
+
+    def compare_datetime(self, other_date):
+        """Return True or False if date is equal to or larger than other date."""
+        return self.start_date >= other_date
