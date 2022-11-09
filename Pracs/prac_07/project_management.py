@@ -31,7 +31,7 @@ def main():
             file = input("Load file from: ")
             projects = load_projects(file)
         elif choice == "S":
-            new_file = input("Enter filename to save to projects to: ")
+            new_file = input("Enter filename to save current projects to: ")
             save_data(new_file, projects)
             print(f"Projects have been saved to {new_file}")
         elif choice == "D":
@@ -94,7 +94,7 @@ def update_project(projects):
     index = get_valid_index(projects)
     print(projects[index])
     new_percentage = get_valid_input(projects[index].completion_percentage, "New percentage: ")
-    new_priority = get_valid_input(projects[index].completion_percentage, "New priority: ")
+    new_priority = get_valid_input(projects[index].priority, "New priority: ")
 
     projects[index] = Project(projects[index].name, projects[index].start_date, new_priority,
                               projects[index].cost, new_percentage)
