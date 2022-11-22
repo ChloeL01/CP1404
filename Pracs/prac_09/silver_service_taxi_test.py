@@ -6,6 +6,5 @@ print(hummer)
 
 silver_service_taxi = SilverService("Silver service", 100, 2)
 silver_service_taxi.drive(18)
-fare = silver_service_taxi.get_fare()
 print(silver_service_taxi)
-print(f"total fare ${fare}")
+print(f"total fare ${silver_service_taxi.get_fare()}")
