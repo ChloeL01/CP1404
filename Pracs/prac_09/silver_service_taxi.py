@@ -2,7 +2,7 @@
 from Pracs.prac_09.taxi import Taxi
 
 
-class SilverService(Taxi):
+class SilverServiceTaxi(Taxi):
     """Silver service taxi class."""
     flagfall = 4.50
 
