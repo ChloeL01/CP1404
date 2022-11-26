@@ -22,3 +22,9 @@ Programming patterns for this subject can be found [_here_](https://github.com/C
 
 Practicals instructions can be found [_here_](https://github.com/CP1404/Practicals)
 
+
+Wiki API info [_here_](https://wikipedia.readthedocs.io/en/latest/quickstart.html)
+
+
+Flask documentation [_here_](https://flask.palletsprojects.com/en/2.2.x/)
+
